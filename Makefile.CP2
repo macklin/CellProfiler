@@ -770,7 +770,7 @@ $(TGTDIR)/wxpython: $(SRCDIR)/wxPython-src-$(WXPYTHONVERSION).tar.bz2 python jpe
 	$(MAKE) -j1 install -C contrib/src/stc && \
 	cd "../wxPython-src-$(WXPYTHONVERSION)/wxPython/" && \
 	$(PYTHON) setup.py build_ext --inplace && \
-	$(PYTHON) setup.py install
+	$(PYTHON) setup.py install WX_CONFIG="../../wxPython-src-$(WXPYTHONVERSION)-$(HOSTTYPE)/lib/wx/config/inplace-gtk2-unicode-release-2.8"
 	touch $@
 
 $(TGTDIR)/nose: $(SRCDIR)/$(PYTHONNOSEVERSION).tar.gz python
